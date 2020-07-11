@@ -1,0 +1,19 @@
+Did you attempt to make your computer player very smart -- i.e., do something more clever than just pick a random legal move?
+    Yes. If the player sets the GREEDY_AI to True in the Othello file, it will be much more clever than the random one.
+
+If so, were you able to accomplish this? Is your computer player as smart as you would like?
+    Yes, I was able to accomplish it. It acts exactly as I want.
+
+How did you determine which piece to play next? Tell us about your “pick next move” algorithm
+    Since the corners are definitely more valuable than other positions, AI checks them first and makes a greedy move if there is no valid move at corners. Therefore, the strategy is:
+        1. Scan the corners of the board, if there is any legal move, put tile on it.
+        2. Else: For every valid position in this turn:
+            Calculate the maximum number of tiles that flip in all valid moves.
+            If there is more than one move to get the max scores, randomly choose one from the greedy_list.
+            Make a greedy move, getting the max score in every turn.
+
+How often did your computer program beat you, or your friends, or whoever tested it out for you?
+    My friends and I normally lose the game.
+
+How would you improve it in the future?
+    In the future, I would like to apply the "minimax" strategy for AI. When given an x depth of strategy, the AI would look x steps further to get the most tiles to be flipped.
